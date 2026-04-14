@@ -221,28 +221,18 @@ docker build -t polybot-research-lab .
 docker run --rm -p 3000:3000 -e OPENAI_API_KEY=your_key_here polybot-research-lab
 ```
 
-## GitHub Positioning
-
-Suggested short repo description:
-
-`OpenAI-powered research lab for Polymarket bot ideas, deep dives, and persistent strategy analysis.`
-
-Suggested README opening sentence for GitHub:
-
-`Generate, analyze, and refine Polymarket trading strategies with GPT-5.4, local SQLite persistence, and a focused research workflow built for bot builders.`
-
-## Repo Notes
+## Notes
 
 - `polybot.db` is intentionally ignored and should not be committed.
-- The recommended deployment pattern is a persistent SQLite path via `DB_PATH`, not committing the database.
-- `.env.example` is the deployment template; `.env.local` is your machine-specific override file and will often contain only the values you actively use locally.
-- On a fresh boot, the app now prefers AI-generated default strategies over synthetic filler entries.
+- Use a persistent SQLite path via `DB_PATH` instead of baking a database into the repo or image.
+- `.env.example` is the deployment template; `.env.local` is for machine-specific overrides.
 - If OpenAI is unavailable during first boot, the app falls back to the local `strategies_seed.json` file.
 
 ### Demo Mode
 
-To run the app in "Demo Mode" (disabling new AI generation and chat for public visitors):
-Set `VITE_DEMO_MODE=true` in your environment variables.
+To disable live AI generation and chat for public visitors, set:
+
+- `VITE_DEMO_MODE=true`
 
 ## License
 
