@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Cross-Market Arbitrage (Polymarket vs Kalshi)",
+    "category": "Arbitrage",
+    "difficulty": "Medium",
+    "profitPotential": "Steady",
+    "description": "Exploit price differences for the same event across Polymarket and Kalshi. Buy on one, sell on the other when the spread exceeds transaction costs.",
+    "implementationHint": "Requires API keys for both platforms and a fast execution engine."
+  },
+  {
+    "title": "Sentiment-Driven News Bot",
+    "category": "Sentiment",
+    "difficulty": "Low",
+    "profitPotential": "Volatile",
+    "description": "Monitor news feeds for keywords related to active markets. Execute trades based on sentiment scores (positive/negative/neutral).",
+    "implementationHint": "Use NLP libraries like NLTK or spaCy for sentiment analysis."
+  },
+  {
+    "title": "Whale Tracking Momentum",
+    "category": "Whale Tracking",
+    "difficulty": "High",
+    "profitPotential": "High",
+    "description": "Monitor large wallet addresses on-chain. When a 'whale' takes a significant position, follow their lead if the market hasn't fully reacted.",
+    "implementationHint": "Use Etherscan API or similar to track specific wallet movements."
+  },
+  {
+    "title": "Political Poll Correlation",
+    "category": "Correlation",
+    "difficulty": "Medium",
+    "profitPotential": "Steady",
+    "description": "Trade election markets based on real-time polling data updates. Buy when polls show a candidate gaining momentum before the market adjusts.",
+    "implementationHint": "Scrape polling aggregators like RealClearPolitics or 538."
+  },
+  {
+    "title": "Liquidity Provision (Market Making)",
+    "category": "Market Making",
+    "difficulty": "High",
+    "profitPotential": "Steady",
+    "description": "Place limit orders on both sides of the spread to capture the bid-ask spread. Profit from high-volume, low-volatility markets.",
+    "implementationHint": "Requires a robust risk management system to avoid 'toxic flow'."
+  },
+  {
+    "title": "Technical Analysis Breakout",
+    "category": "Technical",
+    "difficulty": "Medium",
+    "profitPotential": "High",
+    "description": "Apply standard TA indicators (RSI, MACD, Bollinger Bands) to prediction market price charts. Trade on breakouts or trend reversals.",
+    "implementationHint": "Use libraries like TA-Lib for indicator calculations."
+  },
+  {
+    "title": "Event-Based Hedging",
+    "category": "Correlation",
+    "difficulty": "Medium",
+    "profitPotential": "Steady",
+    "description": "Hedge positions in prediction markets with related assets (e.g., candidate-linked tokens or crypto assets).",
+    "implementationHint": "Calculate hedge ratios based on historical correlation."
+  },
+  {
+    "title": "Social Media Hype Tracker",
+    "category": "Sentiment",
+    "difficulty": "Low",
+    "profitPotential": "Volatile",
+    "description": "Monitor Reddit and Twitter for mentions of specific markets. Trade on volume spikes before mainstream news picks up the story.",
+    "implementationHint": "Use Reddit API and Twitter API v2."
+  },
+  {
+    "title": "Order Book Imbalance",
+    "category": "Market Making",
+    "difficulty": "High",
+    "profitPotential": "Steady",
+    "description": "Analyze the depth of the order book. Trade in the direction of significant buy/sell pressure (imbalance).",
+    "implementationHint": "Requires real-time WebSocket connection to the order book."
+  },
+  {
+    "title": "Historical Trend Reversion",
+    "category": "Technical",
+    "difficulty": "Low",
+    "profitPotential": "Steady",
+    "description": "Identify markets that have deviated significantly from their historical mean and trade on the expectation of reversion.",
+    "implementationHint": "Calculate moving averages and standard deviations."
+  }
+]
