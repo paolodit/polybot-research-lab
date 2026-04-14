@@ -4,9 +4,17 @@ PolyBot Research Lab is an OpenAI-powered strategy workbench for Polymarket bot 
 
 Built for people who want to research prediction-market automation seriously before writing execution code.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-2563eb?style=for-the-badge)](https://pbresearch.twoguysonecat.com/)
+[![License](https://img.shields.io/badge/License-MIT-111827?style=for-the-badge)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-0.1.0-0f172a?style=for-the-badge)](./package.json)
+
+Explore the live demo: [pbresearch.twoguysonecat.com](https://pbresearch.twoguysonecat.com/)
+
+![PolyBot Research Lab screenshot](docs/screenshot.png)
+
 ## Features
 
-- **100 Default Strategies**: A tighter default set seeded from GPT-5.4 when the database is empty, with local JSON fallback.
+- **20 Default Strategies**: A tighter default set seeded from GPT-5.4 when the database is empty, with local JSON fallback.
 - **AI-Powered Deep Dives**: Generates technical analysis automatically for each newly created batch and stores it in SQLite.
 - **Analyst Chat**: Interactive AI assistant to discuss and refine trading concepts.
 - **SQLite Persistence**: All strategies and analyses are saved in a local database.
@@ -17,7 +25,7 @@ Built for people who want to research prediction-market automation seriously bef
 
 ## How It Works
 
-- On first boot, the app seeds the local SQLite database with 100 strategies.
+- On first boot, the app seeds the local SQLite database with 20 strategies.
 - If `OPENAI_API_KEY` is available, the seed set is generated with GPT-5.4.
 - Strategy generation uses `medium` reasoning for throughput.
 - Deep-dive analysis uses `medium` reasoning for stronger technical output without runaway cost.
@@ -52,14 +60,14 @@ Built for people who want to research prediction-market automation seriously bef
 
    Recommended defaults:
    - `DB_PATH=./polybot.db`
-   - `ENABLE_STRATEGY_IMPORT=false`
+   - `ENABLE_STRATEGY_IMPORT=true`
    - `ENABLE_STRATEGY_GENERATION=true`
    - `ENABLE_ANALYST_CHAT=false`
    - `OPENAI_MODEL=gpt-5.4`
    - `OPENAI_GENERATION_REASONING=medium`
    - `OPENAI_DEEP_DIVE_REASONING=medium`
    - `OPENAI_CHAT_REASONING=medium`
-   - `DEFAULT_SEED_COUNT=100`
+   - `DEFAULT_SEED_COUNT=20`
 
 4. Run in development mode:
    ```bash
@@ -78,7 +86,7 @@ Built for people who want to research prediction-market automation seriously bef
 | --- | --- | --- |
 | `OPENAI_API_KEY` | Enables live strategy generation, deep dives, chat, and first-run AI seeding | Your OpenAI project key |
 | `DB_PATH` | Filesystem path for the SQLite database | `./polybot.db` locally, `/captain/data/polybot.db` on CapRover |
-| `ENABLE_STRATEGY_IMPORT` | Enables server-side restore/import endpoint | `false` by default |
+| `ENABLE_STRATEGY_IMPORT` | Enables server-side restore/import endpoint | `true` by default |
 | `ENABLE_STRATEGY_GENERATION` | Enables the server-side Generate New Ideas endpoint | `true` for full app, `false` for view-only deployments |
 | `ENABLE_ANALYST_CHAT` | Enables the server-side Analyst Chat endpoint | `false` by default |
 | `OPENAI_MODEL` | Global fallback model | `gpt-5.4` |
@@ -88,7 +96,7 @@ Built for people who want to research prediction-market automation seriously bef
 | `OPENAI_GENERATION_REASONING` | Reasoning effort for bulk idea generation | `medium` |
 | `OPENAI_DEEP_DIVE_REASONING` | Reasoning effort for deep technical writeups | `medium` |
 | `OPENAI_CHAT_REASONING` | Reasoning effort for analyst chat | `medium` |
-| `DEFAULT_SEED_COUNT` | Number of strategies generated or loaded into a fresh database | `100` |
+| `DEFAULT_SEED_COUNT` | Number of strategies generated or loaded into a fresh database | `20` |
 | `VITE_DEMO_MODE` | Disables live AI features for public/demo deployments | `false` |
 
 ## Model Defaults
@@ -107,7 +115,7 @@ The dashboard includes:
 - `Export Library`: downloads the full strategy database as a JSON backup
 - `Import Library`: restores a previous export
 
-Import is disabled by default. To enable it, set:
+Import is enabled by default:
 
 - `ENABLE_STRATEGY_IMPORT=true`
 
@@ -161,7 +169,7 @@ Before deploying, make sure the app has:
 
 - `OPENAI_API_KEY` configured on the server
 - `DB_PATH` configured to a persistent volume location
-- `DEFAULT_SEED_COUNT=100` if you want the new tighter default seed size
+- `DEFAULT_SEED_COUNT=20` if you want the new tighter default seed size
 - `VITE_DEMO_MODE=false` if you want live generation enabled
 - persistent storage for the SQLite file if you want saved strategies to survive redeploys
 
@@ -172,14 +180,14 @@ Suggested CapRover app settings:
 - Environment variables:
   - `OPENAI_API_KEY`
   - `DB_PATH=/captain/data/polybot.db`
-  - `ENABLE_STRATEGY_IMPORT=false`
+  - `ENABLE_STRATEGY_IMPORT=true`
   - `ENABLE_STRATEGY_GENERATION=true`
   - `ENABLE_ANALYST_CHAT=false`
   - `OPENAI_MODEL=gpt-5.4`
   - `OPENAI_GENERATION_REASONING=medium`
   - `OPENAI_DEEP_DIVE_REASONING=medium`
   - `OPENAI_CHAT_REASONING=medium`
-  - `DEFAULT_SEED_COUNT=100`
+  - `DEFAULT_SEED_COUNT=20`
   - `VITE_DEMO_MODE=false`
 
 Deployment flow:

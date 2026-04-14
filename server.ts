@@ -23,7 +23,7 @@ const OPENAI_CHAT_MODEL = process.env.OPENAI_CHAT_MODEL || OPENAI_MODEL;
 const OPENAI_GENERATION_REASONING = process.env.OPENAI_GENERATION_REASONING || 'medium';
 const OPENAI_DEEP_DIVE_REASONING = process.env.OPENAI_DEEP_DIVE_REASONING || 'medium';
 const OPENAI_CHAT_REASONING = process.env.OPENAI_CHAT_REASONING || 'medium';
-const DEFAULT_SEED_COUNT = Number(process.env.DEFAULT_SEED_COUNT || 100);
+const DEFAULT_SEED_COUNT = Number(process.env.DEFAULT_SEED_COUNT || 20);
 
 const SYSTEM_INSTRUCTION = `
 You are an expert quantitative researcher and algorithmic trader specializing in prediction markets like Polymarket.
